@@ -1,0 +1,24 @@
+{
+  "name": "ts-node-ready",
+  "version": "0.0.1",
+  "description": "Ready to scripting Node with Typescript",
+  "keywords": [
+    "node",
+    "typescript",
+    "ts-node",
+    "tslint"
+  ],
+  "homepage": "https://github.com/towertop/ts-node-ready",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/towertop/ts-node-ready.git"
+  },
+  "author": "towertop",
+  "license": "MIT",
+  "main": "dist/main.js",
+  "files": [ "dist/**/*" ],
+  "engines": { "node" : ">=9.11.2" },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
