@@ -1,6 +1,6 @@
 {
   "name": "ts-node-ready",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Ready to scripting Node with Typescript",
   "private": true,
   "keywords": [
@@ -34,7 +34,6 @@
     "test": "TS_NODE_PROJECT=src/tsconfig.spec.json mocha 'src/**/*.spec.ts'",
     "testWatch": "TS_NODE_PROJECT=src/tsconfig.spec.json mocha --watch 'src/**/*.spec.ts'",
     "prepublishOnly": "npm run lint && npm run clean && npm run build",
-
     "preversion": "npm run lint && npm test",
     "postversion": "git push && git push --tags"
   },
