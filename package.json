@@ -10,8 +10,8 @@
   ],
   "homepage": "https://github.com/towertop/ts-node-ready",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/towertop/ts-node-ready.git"
+    "type": "git",
+    "url": "https://github.com/towertop/ts-node-ready.git"
   },
   "author": "towertop",
   "license": "MIT",
@@ -23,9 +23,18 @@
     "node": ">=9.11.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node dist/main.js",
+    "build": "tsc --listEmittedFiles -p src/tsconfig.app.json",
+    "clean": "rimraf dist/",
+    "dev": "ts-node src/main.ts",
+    "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' src/main.ts",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
   "devDependencies": {
     "@types/node": "^11.9.5",
+    "nodemon": "^1.18.10",
+    "rimraf": "^2.6.3",
+    "ts-node": "^8.0.2",
     "typescript": "^3.3.3333"
   }
 }
