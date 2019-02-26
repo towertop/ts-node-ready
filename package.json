@@ -2,6 +2,7 @@
   "name": "ts-node-ready",
   "version": "0.0.1",
   "description": "Ready to scripting Node with Typescript",
+  "private": true,
   "keywords": [
     "node",
     "typescript",
