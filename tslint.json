@@ -1,0 +1,61 @@
+{
+  "defaultSeverity": "error",
+  "extends": [
+    "tslint:recommended"
+  ],
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules"
+  ],
+  "rules": {
+    "no-constant-condition": true,
+    "no-control-regex": true,
+    "no-duplicate-case": true,
+    "no-empty-character-class": true,
+    "no-ex-assign": true,
+    "no-extra-boolean-cast": true,
+    "no-extra-semi": true,
+    "no-inner-declarations": true,
+    "no-invalid-regexp": true,
+    "ter-no-irregular-whitespace": true,
+    "no-regex-spaces": true,
+    "ter-no-sparse-arrays": true,
+    "no-unexpected-multiline": true,
+    "valid-jsdoc": true,
+    "valid-typeof": true,
+    "no-multi-spaces": true,
+    "ter-no-proto": true,
+    "ter-no-script-url": true,
+    "ter-no-self-compare": true,
+    "handle-callback-err": true,
+    "ter-arrow-body-style": true,
+    "ter-arrow-parens": true,
+    "ter-arrow-spacing": true,
+    "ter-prefer-arrow-callback": true,
+
+    "object-literal-sort-keys": false,
+    "trailing-comma": [
+      true,
+      {
+        "singleline": "never",
+        "multiline": {
+          "objects": "always",
+          "arrays": "always",
+          "functions": "never",
+          "typeLiterals": "ignore"
+        },
+        "esSpecCompliant": true
+      }
+    ],
+    "space-before-function-paren": {
+      "options": {
+        "anonymous": "always",
+        "asyncArrow": "always",
+        "constructor": "always",
+        "method": "always",
+        "named": "always"
+      }
+    },
+    "quotemark": [true, "single", "avoid-escape", "avoid-template"]
+  },
+  "jsRules": true
+}

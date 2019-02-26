@@ -28,13 +28,17 @@
     "clean": "rimraf dist/",
     "dev": "ts-node src/main.ts",
     "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' src/main.ts",
-    "prepublishOnly": "npm run clean && npm run build"
+    "lint": "tslint -c tslint.json -p tsconfig.json",
+    "lintFix": "tslint --fix -c tslint.json -p tsconfig.json",
+    "prepublishOnly": "npm run lint && npm run clean && npm run build"
   },
   "devDependencies": {
     "@types/node": "^11.9.5",
     "nodemon": "^1.18.10",
     "rimraf": "^2.6.3",
     "ts-node": "^8.0.2",
+    "tslint": "^5.13.0",
+    "tslint-eslint-rules": "^5.4.0",
     "typescript": "^3.3.3333"
   }
 }
