@@ -30,10 +30,16 @@
     "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' src/main.ts",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lintFix": "tslint --fix -c tslint.json -p tsconfig.json",
+    "test": "TS_NODE_PROJECT=src/tsconfig.spec.json mocha 'src/**/*.spec.ts'",
+    "testWatch": "TS_NODE_PROJECT=src/tsconfig.spec.json mocha --watch 'src/**/*.spec.ts'",
     "prepublishOnly": "npm run lint && npm run clean && npm run build"
   },
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.6",
     "@types/node": "^11.9.5",
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
     "nodemon": "^1.18.10",
     "rimraf": "^2.6.3",
     "ts-node": "^8.0.2",

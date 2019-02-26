@@ -1,6 +1,6 @@
 // tslint:disable no-console
 
-async function main () {
+export async function main () {
   console.log('Hello World');
 }
 
