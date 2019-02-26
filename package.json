@@ -16,9 +16,16 @@
   "author": "towertop",
   "license": "MIT",
   "main": "dist/main.js",
-  "files": [ "dist/**/*" ],
-  "engines": { "node" : ">=9.11.2" },
+  "files": [
+    "dist/**/*"
+  ],
+  "engines": {
+    "node": ">=9.11.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "@types/node": "^11.9.5",
+    "typescript": "^3.3.3333"
   }
 }
