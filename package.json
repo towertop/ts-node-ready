@@ -33,7 +33,7 @@
     "lintFix": "tslint --fix -c tslint.json -p tsconfig.json",
     "test": "TS_NODE_PROJECT=src/tsconfig.spec.json mocha 'src/**/*.spec.ts'",
     "testWatch": "TS_NODE_PROJECT=src/tsconfig.spec.json mocha --watch 'src/**/*.spec.ts'",
-    "prepublishOnly": "npm run lint && npm run clean && npm run build",
+    "prepublishOnly": "npm run lint && npm test && npm run clean && npm run build",
     "preversion": "npm run lint && npm test",
     "postversion": "git push && git push --tags"
   },
