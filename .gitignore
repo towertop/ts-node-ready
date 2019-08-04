@@ -183,3 +183,4 @@ $RECYCLE.BIN/
 # End of https://www.gitignore.io/api/macos,windows,sublimetext,visualstudiocode,node
 
 dist
+package-lock.json

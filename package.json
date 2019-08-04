@@ -33,9 +33,11 @@
     "lintFix": "tslint --fix -c tslint.json -p tsconfig.json",
     "test": "TS_NODE_PROJECT=src/tsconfig.spec.json mocha 'src/**/*.spec.ts'",
     "testWatch": "TS_NODE_PROJECT=src/tsconfig.spec.json mocha --watch 'src/**/*.spec.ts'",
-    "prepublishOnly": "npm run lint && npm test && npm run clean && npm run build",
-    "preversion": "npm run lint && npm test",
-    "postversion": "git push && git push --tags"
+    "prepublishOnly": "echo \"this is a private package\" && exit 1",
+    "preversion": "npm install && npm run lint && npm test",
+    "version": "npm run clean && npm run build && git rm -f -r --ignore-unmatch src test && git add -f -A dist && git add -f package-lock.json",
+    "postversion": "git push --tags && git reset --hard HEAD~1",
+    "release": "npm version --allow-same-version $npm_package_version"
   },
   "devDependencies": {
     "@types/chai": "^4.1.7",
