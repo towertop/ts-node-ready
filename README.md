@@ -13,6 +13,7 @@ Arrangements in this project:
 5. Add basic Unit Test methods with [Mocha](https://mochajs.org) and [Chai](https://www.chaijs.com/). I prefer BDD style interfaces and assertions with `expect()` function.
 6. Have double TS configuration `tsconfig.app.json` and `tsconfig.spec.json` like Angular projects. The TS lang server reference all `@types/*` module's declarations when you coding in supporting editors. But the compiler need to  select some of them for strict type checking.
 7. Have a simple workflow by `scripts` section in `package.json` which supports building production version, running and testing developement version, linting and fixing code. Use [nodemon](https://github.com/TypeStrong/ts-node/issues/232) to have a live restart or retest when you coding.
+8. Utilize [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged) to enforce code style before every commits. 
 
 ## Setup and Usage
 
@@ -54,8 +55,7 @@ After all, this is a template, you can modify anything on demand.
 
 ## Roadmap
 
-1. Add lint-staged to force only commit clean code.
-2. Use rollup.js to reduce runtime depencencies and still able to debug with sourcemap. 
-3. Collect common Node program patterns as references.
-4. Utilize code generators like Yeoman, Schematics and etc.
+1. Use rollup.js to reduce runtime depencencies and still able to debug with sourcemap. 
+s2. Collect common Node program patterns as references.
+3. Utilize code generators like Yeoman, Schematics and etc.
 
