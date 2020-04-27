@@ -25,7 +25,7 @@
   },
   "scripts": {
     "start": "node dist/main.js",
-    "build": "tsc --listEmittedFiles -p src/tsconfig.app.json",
+    "build": "rollup -c rollup.config.js",
     "clean": "rimraf dist/",
     "dev": "TS_NODE_FILES=true ts-node src/main.ts",
     "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' src/main.ts",
@@ -40,6 +40,7 @@
     "release": "npm version --allow-same-version $npm_package_version"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^6.0.0",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
     "@types/node": "^11.9.5",
@@ -49,6 +50,10 @@
     "mocha": "^6.0.2",
     "nodemon": "^1.18.10",
     "rimraf": "^2.6.3",
+    "rollup": "^1.27.9",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-typescript2": "^0.25.3",
     "ts-node": "^8.0.2",
     "tslint": "^5.13.0",
     "tslint-eslint-rules": "^5.4.0",
