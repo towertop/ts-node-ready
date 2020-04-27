@@ -27,7 +27,7 @@
     "start": "node dist/main.js",
     "build": "tsc --listEmittedFiles -p src/tsconfig.app.json",
     "clean": "rimraf dist/",
-    "dev": "ts-node src/main.ts",
+    "dev": "TS_NODE_FILES=true ts-node src/main.ts",
     "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' src/main.ts",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lintFix": "tslint --fix -c tslint.json -p tsconfig.json",

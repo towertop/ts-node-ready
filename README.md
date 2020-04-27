@@ -58,6 +58,6 @@ After all, this is a template, you can modify anything on demand.
 ## Roadmap
 
 1. Use rollup.js to reduce runtime depencencies and still able to debug with sourcemap. 
-s2. Collect common Node program patterns as references.
+2. Collect common Node program patterns as references.
 3. Utilize code generators like Yeoman, Schematics and etc.
 
