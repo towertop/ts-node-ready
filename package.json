@@ -21,7 +21,7 @@
     "dist/**/*"
   ],
   "engines": {
-    "node": ">=9.11.2"
+    "node": ">=12.4.0"
   },
   "scripts": {
     "start": "node dist/main.js",
@@ -31,6 +31,7 @@
     "watch": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' src/main.ts",
     "lint": "tslint -c tslint.json -p tsconfig.json",
     "lintFix": "tslint --fix -c tslint.json -p tsconfig.json",
+    "checkTyping": "tsc -p src/tsconfig.app.json --noEmit && tsc -p src/tsconfig.spec.json --noEmit",
     "test": "cross-env TS_NODE_PROJECT=src/tsconfig.spec.json mocha 'src/**/*.spec.ts'",
     "testWatch": "cross-env TS_NODE_PROJECT=src/tsconfig.spec.json mocha --watch 'src/**/*.spec.ts'",
     "prepublishOnly": "echo \"this is a private package\" && exit 1",
@@ -41,9 +42,10 @@
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^6.0.0",
+    "@tsconfig/node12": "^1.0.7",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
-    "@types/node": "^11.9.5",
+    "@types/node": "^12.20.10",
     "chai": "^4.2.0",
     "cross-env": "^7.0.2",
     "husky": "^3.0.2",
@@ -58,7 +60,7 @@
     "ts-node": "^8.0.2",
     "tslint": "^5.13.0",
     "tslint-eslint-rules": "^5.4.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^4.2.4"
   },
   "husky": {
     "hooks": {

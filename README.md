@@ -2,19 +2,7 @@
 
 ## Introduction
 
-This is a project template with various adjusted configurations. You can start scripting Node on the base with confidence.
-
-Arrangements in this project:
-
-1. Declares a consistent indent style in [`.editorconfig`](https://editorconfig.org/).
-2. Fullly supports ES2017 with `engines` section in [`package.json`](https://docs.npmjs.com/files/package.json#engines) (according to [node.green](https://node.green/)) and ts compiler option `target` in [`tsconfig.json`](http://www.typescriptlang.org/docs/handbook/compiler-options.html).
-3. TS supports ESModules and works well with Node builtin modules. [Current Node](https://medium.com/the-node-js-collection/the-current-state-of-implementation-and-planning-for-esmodules-a4ecb2aac07a) only supports ESModules with flags and `.mjs` extension. 
-4. Includes [TSLint](https://palantir.github.io/tslint) and its autofix function. In [`tslint.json`](https://palantir.github.io/tslint/usage/configuration/) turn on the [`tslint:recommended` presets](https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts) as well as appliable ESLint rules from [tslint-eslint-rules](https://github.com/buzinas/tslint-eslint-rules). I added some personal adjustments after a blank line at the `rules` section in that file.
-5. Adds basic Unit Test methods with [Mocha](https://mochajs.org) and [Chai](https://www.chaijs.com/). I prefer BDD style interfaces and assertions with `expect()` function.
-6. Has double TS configuration `tsconfig.app.json` and `tsconfig.spec.json` like Angular projects. The TS lang server reference all `@types/*` module's declarations when you coding in supporting editors. But the compiler need to  select some of them for strict type checking.
-7. Has a simple development workflow by `scripts` section in `package.json`. Use [nodemon](https://github.com/TypeStrong/ts-node/issues/232) to have a live restart or retest when you coding.
-8. Utilizes [husky](https://github.com/typicode/husky) and [lint-staged](https://github.com/okonet/lint-staged) to enforce code style before every commits. 
-9. Has a simple relase method within the workflow based on [npm-version](https://docs.npm.red/cli/version.html). It would lint and test source code, build production version, and release them as a git tag. I feel it is handy for private projects within a team internally. What you should do before use `release` command is to bump the version in `package.json`, else would get stuck by tag name collision.
+This is a project template with various adjusted configurations. You can start scripting Node on the base with confidence. It targets to the last NodeJS version still under maintenance, meaning [v12][node-releases] and [ES2019][node-es-compatibility-table].
 
 ## Setup and Usage
 
@@ -53,11 +41,48 @@ After all, this is a template, you can modify anything on demand.
 ## Advices
 
 1. Make your editor support TS type check and code lint.
-2. Use new ES2017 syntax as more as you can.
+2. Use new ES2019 syntax as more as you can.
+3. Update `@types/node` if targeting to a fresher NodeJS than v12.
+
+## Details
+
+1. Defines a consistent indent style in [`.editorconfig`][editorconfig.org].
+2. Declares target node version range by `engines` field in [`package.json`][npm-package.json-doc].
+3. Uses officially recommended TSConfig base from [tsconfig/bases][] project, which specified type check for ES2019.
+3. Installs [@types/node@12][] to specify type check for Node API of that version.
+3. Tunes TSConfig to transpile ESModules to CommonJS for Node. [Current Node][state-of-node-esmodules] has't been ready for native ESModules without flag and `.mjs` file extension. 
+4. Includes [TSLint][tslint-repo] and its autofix function. In [`tslint.json`][tslint-usage-configuration] turn on the [`tslint:recommended` presets][tslint-recommended-presets] and additional rules from [tslint-eslint-rules][tslint-eslint-rules]. I added some personal adjustments after a blank line at the `rules` section in that file.
+5. Adds basic Unit Test methods with [Mocha][mochajs.org] and [Chai][chaijs.com]. I prefer BDD style interfaces and assertions with `expect()` function.
+6. Has double TS configuration `tsconfig.app.json` and `tsconfig.spec.json` like Angular projects. The TS lang server reference all `@types/*` module's declarations when you coding in supporting editors. But the compiler need to  select some of them for strict type checking.
+7. Has a simple development workflow by `scripts` section in `package.json`. Use [nodemon][ts-node/issues/232] to have a live restart or retest when you coding.
+8. Utilizes [husky][] and [lint-staged][] to enforce code style before every commits. 
+9. Has a simple relase method within the workflow based on [npm-version][]. It would lint and test source code, build production version, and release them as a git tag. I feel it is handy for private projects within a team internally. What you should do before use `release` command is to bump the version in `package.json`, else would get stuck by tag name collision.
 
 ## Roadmap
 
 1. Use rollup.js to reduce runtime depencencies and still able to debug with sourcemap. 
 2. Collect common Node program patterns as references.
 3. Utilize code generators like Yeoman, Schematics and etc.
+4. Introduce zeit/pkg.
+5. Introduce node-config.
+6. Replace tslint with typescript-eslint.
+7. Upgrade all deps with builtin compatibility checks
+8. Introduce schematic-release?
 
+[node-releases]: https://nodejs.org/en/about/releases/
+[node-es-compatibility-table]: https://node.green/
+[editorconfig.org]: https://editorconfig.org/
+[npm-package.json-doc]: https://docs.npmjs.com/files/package.json#engines
+[state-of-node-esmodules]: https://medium.com/the-node-js-collection/the-current-state-of-implementation-and-planning-for-esmodules-a4ecb2aac07a
+[tslint-repo]: https://palantir.github.io/tslint
+[tslint-usage-configuration]: https://palantir.github.io/tslint/usage/configuration/
+[tslint-recommended-presets]: https://github.com/palantir/tslint/blob/master/src/configs/recommended.ts
+[tslint-eslint-rules]: https://github.com/buzinas/tslint-eslint-rules
+[mochajs.org]: https://mochajs.org
+[chaijs.com]: https://www.chaijs.com/
+[ts-node/issues/232]: https://github.com/TypeStrong/ts-node/issues/232
+[husky]: https://github.com/typicode/husky
+[lint-staged]: https://github.com/okonet/lint-staged
+[npm-version]: https://docs.npm.red/cli/version.html
+[tsconfig/bases]: https://github.com/tsconfig/bases.
+[@types/node@12]: https://www.npmjs.com/package/@types/node
