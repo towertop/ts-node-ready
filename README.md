@@ -56,11 +56,11 @@ After all, this is a template, you can modify anything on demand.
 6. Has double TS configuration `tsconfig.app.json` and `tsconfig.spec.json` like Angular projects. The TS lang server reference all `@types/*` module's declarations when you coding in supporting editors. But the compiler need to  select some of them for strict type checking.
 7. Has a simple development workflow by `scripts` section in `package.json`. Use [nodemon][ts-node/issues/232] to have a live restart or retest when you coding.
 8. Utilizes [husky][] and [lint-staged][] to enforce code style before every commits. 
-9. Has a simple relase method within the workflow based on [npm-version][]. It would lint and test source code, build production version, and release them as a git tag. I feel it is handy for private projects within a team internally. What you should do before use `release` command is to bump the version in `package.json`, else would get stuck by tag name collision.
+9. Has a simple relase method within the workflow based on [npm-version][] command. It would lint and test source code, build production version, and release them as a git tag. I feel it is handy for private projects within a team internally. What you should do before use `release` command is to bump the version in `package.json`, else would get stuck by tag name collision.
+10. Use [rollup.js][] to bundle and emit `main.js` while keeping readable javascript code and sourcemap for debugging. 
 
 ## Roadmap
 
-1. Use rollup.js to reduce runtime depencencies and still able to debug with sourcemap. 
 2. Collect common Node program patterns as references.
 3. Utilize code generators like Yeoman, Schematics and etc.
 4. Introduce zeit/pkg.
@@ -68,6 +68,7 @@ After all, this is a template, you can modify anything on demand.
 6. Replace tslint with typescript-eslint.
 7. Upgrade all deps with builtin compatibility checks
 8. Introduce schematic-release?
+9. Bring in npm-check-updates tool to confidentially bump dependencies.
 
 [node-releases]: https://nodejs.org/en/about/releases/
 [node-es-compatibility-table]: https://node.green/
@@ -86,3 +87,4 @@ After all, this is a template, you can modify anything on demand.
 [npm-version]: https://docs.npm.red/cli/version.html
 [tsconfig/bases]: https://github.com/tsconfig/bases.
 [@types/node@12]: https://www.npmjs.com/package/@types/node
+[rollup.js]: https://www.rollupjs.org/

@@ -41,12 +41,16 @@
     "release": "npm version --allow-same-version $npm_package_version"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^6.0.0",
+    "@rollup/plugin-alias": "^3.1.2",
+    "@rollup/plugin-commonjs": "^11.1.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^6.1.0",
     "@tsconfig/node12": "^1.0.7",
     "@types/chai": "^4.1.7",
     "@types/mocha": "^5.2.6",
     "@types/node": "^12.20.10",
     "@types/semver": "^7.3.5",
+    "builtin-modules": "^3.2.0",
     "chai": "^4.2.0",
     "cross-env": "^7.0.2",
     "husky": "^3.0.2",

@@ -1,10 +1,14 @@
 // @ts-check
 import path from 'path';
+import builtins from 'builtin-modules';
+import alias from '@rollup/plugin-alias';
+import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
+import resolve from '@rollup/plugin-node-resolve';
 import typescript from 'rollup-plugin-typescript2';
 import { terser } from 'rollup-plugin-terser';
-// import resolve from '@rollup/plugin-node-resolve';
-// import commonjs from 'rollup-plugin-commonjs';
 
+// tslint:disable-next-line jsdoc
 /** @type {(dir: string) => string} */
 const resolveLocal = (dir) => path.join(__dirname, dir);
 
@@ -31,8 +35,17 @@ const config = {
     },
   ],
   plugins: [
-    // resolve(),
-    // commonjs(),
+    alias({
+      entries: [
+        {
+          find: /^@\//,
+          replacement: resolveLocal('src/'),
+        },
+      ],
+    }),
+    resolve(),
+    json(),
+    commonjs(),
     typescript({
       clean: true,
       tsconfig: resolveLocal('src/tsconfig.app.json'),
@@ -43,7 +56,8 @@ const config = {
       },
     }),
   ],
-  external: /** @type {string[]} */([]).concat(runtimeDeps),
+  // Note: import nested module paths like 'xxx/es/comp' would have issue
+  external: builtins.concat(runtimeDeps),
 };
 
 export default config;
