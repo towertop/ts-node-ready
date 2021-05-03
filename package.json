@@ -38,7 +38,8 @@
     "preversion": "npm install && npm run lint && npm test",
     "version": "npm run clean && npm run build && git rm -f -r --ignore-unmatch src test && git add -f -A dist && git add -f package-lock.json",
     "postversion": "git push --tags && git reset --hard HEAD~1",
-    "release": "npm version --allow-same-version $npm_package_version"
+    "release": "npm version --allow-same-version $npm_package_version",
+    "buildDocker": "docker build -t $npm_package_name:$npm_package_version -f ./Dockerfile ."
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^3.1.2",

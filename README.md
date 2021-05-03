@@ -28,12 +28,11 @@ Commands include:
   <tr><td>watch</td><td>automatically restart main.ts</td></tr>
   <tr><td>lint</td><td>check all source code for bad practices</td></tr>
   <tr><td>lintFix</td><td>manage to correct the bad practices</td></tr>
+  <tr><td>checkTyping</td><td>use tsc check the typing of scripts</td></tr>
   <tr><td>test</td><td>execute test cases</td></tr>
   <tr><td>testWatch</td><td>automatically re-execute test cases</td></tr>
   <tr><td>release</td><td>release current version as a git tag</td></tr>
-  <tr><td>version</td><td>used by 'release' comamnd</td></tr>
-  <tr><td>preversion</td><td>used by 'release' comamnd</td></tr>
-  <tr><td>postversion</td><td>used by 'release' comamnd</td></tr>
+  <tr><td>buildDocker</td><td>deliver the app as a docker image</td></tr>
 </table>
 
 After all, this is a template, you can modify anything on demand.
@@ -58,6 +57,7 @@ After all, this is a template, you can modify anything on demand.
 8. Utilizes [husky][] and [lint-staged][] to enforce code style before every commits. 
 9. Has a simple relase method within the workflow based on [npm-version][] command. It would lint and test source code, build production version, and release them as a git tag. I feel it is handy for private projects within a team internally. What you should do before use `release` command is to bump the version in `package.json`, else would get stuck by tag name collision.
 10. Use [rollup.js][] to bundle and emit `main.js` while keeping readable javascript code and sourcemap for debugging. 
+11. Use [Dockerfile][] to build and deliver the app as an image.
 
 ## Roadmap
 
@@ -88,3 +88,4 @@ After all, this is a template, you can modify anything on demand.
 [tsconfig/bases]: https://github.com/tsconfig/bases.
 [@types/node@12]: https://www.npmjs.com/package/@types/node
 [rollup.js]: https://www.rollupjs.org/
+[Dockerfile]: https://docs.docker.com/engine/reference/commandline/build/
